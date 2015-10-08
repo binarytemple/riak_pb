@@ -318,6 +318,24 @@ message TsPutResp {
 
 }
 
+message TsDelReq {
+  required bytes table = 1;
+  repeated TsCell key = 2;
+  // optional uint64 radius = 3;
+  optional uint32 rw = 3;
+  optional bytes vclock = 4;
+  optional uint32 r = 5;
+  optional uint32 w = 6;
+  optional uint32 pr = 7;
+  optional uint32 pw = 8;
+  optional uint32 dw = 9;
+  optional uint32 timeout = 10;
+}
+
+message TsDelResp {
+
+}
+
 message TsInterpolation {
   required bytes base = 1;
   repeated RpbPair interpolations = 2;
